@@ -26,24 +26,27 @@ struct RecipeCard: View {
                         .foregroundColor(.white.opacity(0.7))
                         //.frame(width: .infinity, height: .infinity)
             }
-            }.frame(width: 160, height: 270, alignment: .center)
+            }.frame(minWidth: 160, maxWidth: 190, minHeight: 270, maxHeight: 270, alignment: .center)
                 .background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
             
             HStack {
                 Text(recipe.name)
-                    //.font(.subheadline)
+                    .font(.subheadline).bold()
                     //.foregroundColor(.black)
                     .multilineTextAlignment(.leading)
-                .frame(maxWidth: 136)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .foregroundColor(.black)
                 
                 Spacer()
             }
             
+            //PeopleView()
+            
             Spacer()
                 //.padding()
         }
-        .frame(width: 160, height: 330, alignment: .top)
+        .frame(minWidth: 160, maxWidth: 190, minHeight: 330, maxHeight: 330, alignment: .top)
             //.shadow(color: Color.black.opacity(0.3), radius: 15, x: 0, y: 10)
     }
 }

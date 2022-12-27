@@ -17,10 +17,12 @@ struct RecipeList: View {
                 Spacer()
             }
             
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 20)], spacing: 15) {
                 ForEach(recipes) {
                     recipe in
-                    NavigationLink(destination: RecipeView(recipe: recipe)) {RecipeCard(recipe: recipe)}
+                    NavigationLink(destination: RecipeView(recipe: recipe)) {
+                        RecipeCard(recipe: recipe)
+                                    }
                 }
             }
             .padding(.top)
